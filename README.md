@@ -3,6 +3,10 @@ I wanted to code something in a few hours, since I had sudden downtime and hadn'
 
 Just run the main file.
 
+# Music
+
+The music was taken from [Royalty Free Music Clips](https://www.royaltyfreemusicclips.com/pir/free_music_loops.shtml) and is ostensibly royalty-free.
+
 # Heads-Up: Text file will be saved on your device
 The game will create a text file when it runs to store a high score. Obviously, bit of a make-do solution, and I need to read-up on how to properly do that. But, yeah, if you want to restart the high score (or change it completely to impress anyone in the house), it's a .txt file. I'
 
