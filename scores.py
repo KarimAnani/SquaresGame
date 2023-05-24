@@ -55,12 +55,14 @@ def displayHighScore(screen, score):
         contents = file.readlines()
         # Extract the last score and new score from the file contents
         lastscore = int(contents[0].split(':')[1].strip())
+        print("Last score: ", lastscore)
         highscore = int(contents[1].split(':')[1].strip())
+        print("High score: ", highscore)
         # Render the high score text on the screen
 
         font = pygame.font.Font(None, 36)
 
-        if score > lastscore:
+        if gameScore == highscore:
             # Because it's already updated
             # Could also write score == lastscore
             # Should have been updating the score and all in THIS function
