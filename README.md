@@ -1,15 +1,15 @@
 # Readme
 ## Background
-I wanted to code something, start to finish, in a few hours, since I suddenly had downtime and hadn't coded anything except some personal work tools in about a decade (I couldn't even remember how to  write a for loop) and this game (imaginatively titled _Squares_) was the result. Short of a main menu, the ability to restart the game, and type in the owner of a high school, I succeeded. I hope it's fun.
+I wanted to code something, start to finish, in a few hours, since I suddenly had downtime and hadn't coded anything except some personal work tools in about a decade (I couldn't even remember how to  write a for loop) and this game (imaginatively titled _Squares_) was the result. Short of a main menu, the ability to restart the game, and type in who's just scored, I succeeded. I hope it's fun.
 
 ## How to play
 Just run the main file. Avoid the green squares as long as you can. If you get bored, exit by pressing close.
 
 ## Heads-up: Text file will be saved on your device
-The game will create a text file when it runs to store a high score. On the one hand, it's a bit of a make-do solution; I need to read-up on how to properly do that. On the other, you can restart the high score—or change it completely to impress the person of your dreams; drop a high score of a million!—since it's a .txt file. What this game lacks in programming integrity, it makes up for in potential matchmaking. Turn heads. Give yourself a high score of 1,000,000 today.
+The game will create a text file when it runs to store a high score. On the one hand, it's a bit of a make-do solution; I need to read-up on how to properly do that. On the other, you can restart the high score—or change it completely to impress the person of your dreams; drop a high score of a million! What this game lacks in programming integrity, it makes up for in potential matchmaking. Turn heads. Give yourself a high score of 1,000,000 today.
 
 ## Music
-The music was taken from [Royalty Free Music Clips](https://www.royaltyfreemusicclips.com/pir/free_music_loops.shtml). I'm trusting it's royalty-free. In the current version, the game checks if there are .wav files, then builds a list out of them to play. If you want to add music to the game, just throw it in the dist folder, although if it's mp3, move it into a separate directory/adjust the code accordingly to avoid playing the stop sound for music. Or play the stop sound for music. Who am I to judge?
+The music was taken from [Royalty Free Music Clips](https://www.royaltyfreemusicclips.com/pir/free_music_loops.shtml). I'm _trusting_ it's royalty-free. In the current build, the game checks if there are .wav files, then slaps a list together out of them to play. If you want to add music to the game, just throw it in the dist folder, although if it's mp3, move it into a separate directory and adjust the code accordingly to avoid playing the stop sound for music. Or play the stop sound for music. Who am I to judge?
 
 ## Probably embarrassing things
 - Naming conventions are a hodgepodge; there's a mixture of camel case and underscores. I was typing furiously and testing, only refactoring code once or twice throughout to make fixes easier.
