@@ -11,5 +11,5 @@ The music was taken from [Royalty Free Music Clips](https://www.royaltyfreemusic
 The game will create a text file when it runs to store a high score. Obviously, bit of a make-do solution, and I need to read-up on how to properly do that. But, yeah, if you want to restart the high score (or change it completely to impress anyone that you've scored a million or something), it's a .txt file.
 
 # Probably embarrasing things
-- Naming conventions are slapdash; there's a mixture of camel case and underscores. It'd be embarrassing, but I was typing furiously and testing, only refactoring code once or twice throughout to make fixes easier.
-- Attempting to move the main loop into a different file added a two-second delay to starting the game. Not sure if there's a fix for that or if that slowness comes with Python. 
+- Naming conventions are slapdash; there's a mixture of camel case and underscores. I was typing furiously and testing, only refactoring code once or twice throughout to make fixes easier.
+- Attempting to move the main loop into a different file with more manageable function calls added a two-second delay to starting the game. Not sure if there's a fix for that or if that slowness comes with Python. I had to move it back to the main file to keep it smooth.
