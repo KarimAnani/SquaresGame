@@ -1,5 +1,5 @@
 # Readme
-I wanted to code something in a few hours, since I had sudden downtime and hadn't coded in about a decade, and this game (imaginatively titled "Squares") was the result. My goal was to make something from start to finish. Short of a main menu, including the ability to restart the game, I succeeded. I hope it's fun.
+I wanted to code something in a few hours, since I had sudden downtime and hadn't coded anything except some personal work tools in about a decade (I couldn't even remember how to loop!), and this game (imaginatively titled "Squares") was the result. My goal was to make something from start to finish. Short of a main menu, including the ability to restart the game, I succeeded. I hope it's fun.
 
 Just run the main file.
 
