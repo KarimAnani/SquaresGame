@@ -5,6 +5,10 @@ import pygame
 
 gameScore = 0
 
+def resetScore():
+    global gameScore
+    gameScore = 0
+
 def updateScore():
     global gameScore
     gameScore += 1
@@ -54,10 +58,8 @@ def displayHighScore(screen, score):
         # Read the contents of the file
         contents = file.readlines()
         # Extract the last score and new score from the file contents
-        lastscore = int(contents[0].split(':')[1].strip())
-        print("Last score: ", lastscore)
         highscore = int(contents[1].split(':')[1].strip())
-        print("High score: ", highscore)
+        
         # Render the high score text on the screen
 
         font = pygame.font.Font(None, 36)

@@ -195,5 +195,5 @@ while True:
             break
 
 # Done!
-# Just in case
+
 pygame.quit()
