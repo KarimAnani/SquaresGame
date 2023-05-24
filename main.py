@@ -30,7 +30,7 @@ songPlaying = random.randint(0, len(music_choices)-1)
 pygame.mixer.music.load(music_choices[songPlaying])
 pygame.mixer.music.play(-1)
 
-# Text
+# Text (and prepping the "ready?" message)
 textFont = pygame.font.Font(None, 64)
 
 ready_text = textFont.render("Ready?", True, (0, 255, 0))
@@ -104,13 +104,11 @@ while gameIsRunning:
     # the buffer
     buffer.fill((255, 255, 255))
 
-    # Did the user click the window close button?
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             gameIsRunning = False
 
-    # Create EnemySquare Objects in-game
-
+    # Create EnemySquare objects in-game
     if pygame.time.get_ticks() - timeSinceSpawn >= milliseconds:
         
         #speed = random.randint(1, 3)
@@ -155,14 +153,16 @@ while gameIsRunning:
 
             pygame.mixer.music.load(music_choices[songPlaying])
             pygame.mixer.music.play(-1)
-            break # I think I fixed it by breaking out of the inner loop
+            break # Believe it or not, it took me HOURS to fix a bug by realising I needed a "break" here
             
         else:
             # Actually move the player
             squares[i].move(buffer)
             squares[i].draw(buffer)
             player.move(buffer)
-            player.draw(buffer)
+            # Keeping this in as a comment because it's such a hilarious mistake
+            # No the game would often draw the player not colliding! draw() is called twice
+            # player.draw(buffer)
     
     pygame.mouse.set_visible(False)
     currentTime = pygame.time.get_ticks()
