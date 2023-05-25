@@ -56,9 +56,7 @@ def displayHighScore(screen, score):
         font = pygame.font.Font(None, 36)
 
         if gameScore == highscore:
-            # Because it's already updated
-            # Could also write score == lastscore
-            # Should have been updating the score and all in THIS function
+            # This checks if they're equal because the high score's already updated in checkHighScore()
             # El oh el
             highscore_text = font.render(f"Ding ding ding! There's a new champion! Score: {score}", True, (0, 0, 255))
         else:
