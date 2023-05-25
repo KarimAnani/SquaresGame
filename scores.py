@@ -16,40 +16,31 @@ def updateScore():
 
 def checkHighScore():
     global gameScore
+    high_score_file = 'high_score.txt'
+
     try:
-        # Check if the file exists
-        if os.path.isfile('high_score.txt'):
-            # Open the high score file in read mode
-            with open('high_score.txt', 'r') as file:
-                # Read the contents of the file
+        if os.path.isfile(high_score_file):
+            with open(high_score_file, 'r') as file:
                 contents = file.readlines()
 
-                # Extract the last score from the file contents
                 last_highscore = int(contents[0].split(':')[1].strip())
                 current_highscore = int(contents[1].split(':')[1].strip())
 
                 if gameScore > current_highscore:
-                    last_highscore = current_highscore
-                    current_highscore = gameScore
+                    last_highscore, current_highscore = current_highscore, gameScore
 
-                    # Open the high score file in write mode
-                    with open('high_score.txt', 'w') as file:
-                        # Write the new high score and old high score to the file
+                    with open(high_score_file, 'w') as file:
                         file.write(f"last_score: {last_highscore}\n")
                         file.write(f"new_score: {current_highscore}")
         else:
-            # If the file doesn't exist, create it and set the new high score
-            with open('high_score.txt', 'w') as file:
+            with open(high_score_file, 'w') as file:
                 file.write(f"last_score: 0\n")
                 file.write(f"new_score: {gameScore}")
     except FileNotFoundError:
-        # Set the old high score to 0
-        old_high_score = 0
-
-        # Create the high score file and set the new high score
-        with open('high_score.txt', 'w') as file:
-            file.write(f"last_score: {old_high_score}\n")
+        with open(high_score_file, 'w') as file:
+            file.write(f"last_score: 0\n")
             file.write(f"new_score: {gameScore}")
+
 
 
 def displayHighScore(screen, score):
