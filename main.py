@@ -1,4 +1,4 @@
-# Import our libraries
+# Import and initialize the pygame library
 import os
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = '1' # To remove the hello from the pygame community
 
@@ -6,35 +6,35 @@ import pygame
 import random
 import scores
 import sys
+
 from EnemySquare import EnemySquare
 from Player import Player
-
 pygame.init()
 
-# Global screen variables. Could be too big. I think the game was more fun when it was cramped.
-width = 800
-height = 600
+# Global variables
+width = 1000
+height = 700
 
 # Music
-# Load and play  background music from any .wav files on the directory
+# Load and play the background music
 
 music_choices = []
 
 for filename in os.listdir(os.getcwd()):
     if filename.endswith('.wav'):  # Check if the file ends with '.wav'
         music_choices.append(filename)
-        
+
 songPlaying = random.randint(0, len(music_choices)-1)
 pygame.mixer.music.load(music_choices[songPlaying])
 pygame.mixer.music.play(-1)
 
-# Prepare text stuff
+# Text
 textFont = pygame.font.Font(None, 64)
 
 ready_text = textFont.render("Ready?", True, (0, 255, 0))
 ready_rect = ready_text.get_rect(center=(width/2, height/2))
-
 scoreFont = pygame.font.Font(None, 36)
+
 endFont_text = pygame.font.Font(None, 30)
 instructions_font = pygame.font.Font(None, 30)
 instructions_text = instructions_font.render("Click anywhere. Avoid the green squares using the mouse.", 10,
@@ -56,7 +56,7 @@ caption = captionsTuple[random.randint(0, len(captionsTuple)-1)]
 pygame.display.set_caption(caption)
 screen = pygame.display.set_mode([width, height])
 
-# Create an off-screen surface for speedy displays
+# Create an off-screen surface
 buffer = pygame.Surface(screen.get_size())
 
 # Start the game
@@ -80,6 +80,7 @@ def readyGame(buffer):
                 sys.exit()
 
 # Game is actually running
+
 def runGame(buffer):
     # Global (time)
     clock = pygame.time.Clock()
@@ -108,23 +109,17 @@ def runGame(buffer):
                 pygame.quit()
                 sys.exit()
 
-        # Create EnemySquare Objects in-game
-
+        # Create EnemySquare objects in-game, add to ever-expanding list, hope it doesn't somehow affect memory
         if currentTime - timeSinceSpawn >= milliseconds:
-            
-            #speed = random.randint(1, 3
             spawnWhere = random.randint(0,3)
-            # arguments = colour, size, spawnSide, speed = 1, 
-            newSquare = EnemySquare(buffer, (0, 255, 0), 30, spawnWhere) # colour, size, spawn
+            newSquare = EnemySquare(buffer, (0, 255, 0), 30, spawnWhere)
             squares.append(newSquare)
             timeSinceSpawn = pygame.time.get_ticks()
-
 
         # Get the position of the mouse
         mouse_pos = pygame.mouse.get_pos()
 
         # Collision stuff
-
         for i in range(len(squares)):
             if player.rect.colliderect(squares[i].rect):
                 gameIsRunning = False
@@ -163,7 +158,8 @@ def runGame(buffer):
                 squares[i].draw(buffer)
                 player.move(buffer)
 
-                # I was accindetally calling draw() twice there.
+                # I was accidentally calling draw() twice there.
+                # It's staying as a keepsake
                 # player.draw(buffer)
         
         pygame.mouse.set_visible(False)
@@ -191,5 +187,6 @@ while True:
         presently = pygame.time.get_ticks()
         if presently - pauseTime > 3000:
             break
-# Done! Next line is redundant, but just in case
+# Done!
+# Added just in case
 pygame.quit()
