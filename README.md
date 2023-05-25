@@ -1,6 +1,6 @@
 # Readme
 ## Background
-I decided to code something, start to finish, in a few hours, since I suddenly had downtime and hadn't programmed anything in about a decade; I couldn't even remember how to  write a for loop. This game (imaginatively titled _Squares_) was the result. Short of a main menu, the ability to restart the game, and type in who's just scored, I succeeded. I hope it's fun.
+I decided to code something, start to finish, in a few hours, since I suddenly had downtime and hadn't programmed anything in about a decade; I couldn't even remember how to  write a for loop. This game (imaginatively titled _Squares_) was the result. Short of a main menu and the ability to type in who's just scored, I succeeded. I hope it's fun.
 
 ## How to play
 Just run the file main.py. Avoid the green squares for as long as you can. If you get bored, exit by pressing close.
